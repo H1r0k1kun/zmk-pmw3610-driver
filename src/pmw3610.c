@@ -803,7 +803,7 @@ static int pmw3610_report_data(const struct device *dev) {
 #if AUTOMOUSE_LAYER > 0
             // トラックボールの動きの大きさを計算
             int16_t movement_size = abs(x) + abs(y);
-            if (input_mode == MOVE && x + y > 1 &&
+            if (input_mode == MOVE &&
                 (automouse_triggered || zmk_keymap_highest_layer_active() != AUTOMOUSE_LAYER) &&
                 movement_size > CONFIG_PMW3610_MOVEMENT_THRESHOLD) {
                 activate_automouse_layer();
